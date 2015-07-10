@@ -1,4 +1,4 @@
-Q-tools
+q-tools
 =========
 
 Extends [Q](https://github.com/kriskowal/q) with `map` and `each` methods.

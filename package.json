@@ -1,5 +1,5 @@
 {
-  "name": "Q-tools",
+  "name": "q-tools",
   "description": "Extends Q with each and map.",
   "version": "0.1.0",
   "main": "q-tools.js",
