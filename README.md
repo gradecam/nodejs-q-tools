@@ -3,9 +3,9 @@ Q-tools
 
 Extends [Q](https://github.com/kriskowal/q) with `map` and `each` methods.
 
-Allows execution of a particular function for every value in an array. If a value is
-a promise then defer the execution of the function until the promise has been resolved.
-
+Allows execution of a particular function for every value in an array. If the array
+contains promises the supplied function will not be called until all promises have been
+resolved.
 
 ## map
 
