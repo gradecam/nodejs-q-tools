@@ -22,7 +22,7 @@ var doubled = Q.map(original, double);
 var doubledParallel = Q.mapAsync(original, double);
 ```
 
-# each
+## each
 
 `each` returns the original array after having called `fn` for each item. Use this method instead
 of map if you don’t need the transformed values.
@@ -37,3 +37,4 @@ Q.each(original, double);
 // process `original` in parallell
 Q.eachAsync(original, double);
 ```
+
