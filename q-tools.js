@@ -20,9 +20,9 @@ module.exports = Q;
 Q.map = function(array, fn) {
     var retVals = [];
     return Q(array).then(function(arr) {
-        return __.reduce(arr, function(promise, item) {
+        return __.reduce(arr, function(promise, item, idx) {
             return Q.all([promise, item]).then(function(resolved) {
-                return fn(resolved[1]);
+                return fn(resolved[1], idx);
             }).then(function(retVal) {
                 retVals.push(retVal);
             });
@@ -45,7 +45,9 @@ Q.mapAsync = function(array, fn) {
     return Q(array).then(function(arr) {
         return Q.all(__.map(arr, function(item, idx) {
             return Q(item)
-            .then(fn)
+            .then(function(resolved) {
+                fn(resolved, idx);
+            })
             .then(function(final) {
                 retVals[idx] = final;
             });
